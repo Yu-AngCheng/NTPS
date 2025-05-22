@@ -1,0 +1,53 @@
+# figure
+figure.frameon: False
+figure.titleweight: regular
+figure.titlesize: x-large
+figure.autolayout: True
+figure.facecolor: w
+figure.edgecolor: None
+figure.constrained_layout.use: False
+
+# savefig
+savefig.dpi: 300
+savefig.format: pdf
+savefig.facecolor: None
+savefig.edgecolor: None
+savefig.bbox: tight
+
+# font embedding
+pdf.fonttype: 42
+ps.fonttype: 42
+svg.fonttype: none
+font.size : 9
+
+# axes
+axes.facecolor: None
+axes.labelweight: bold
+axes.labelsize: medium
+axes.titleweight: regular
+axes.titlesize: medium
+axes.linewidth: 1
+axes.unicode_minus: False
+
+# ticks
+xtick.major.width: 1
+xtick.major.size: 4
+xtick.labelsize: medium
+ytick.major.width: 1
+ytick.major.size: 4
+ytick.labelsize: medium
+
+# lines
+lines.linewidth: 2
+
+# spines
+axes.spines.right: False
+axes.spines.top: False
+
+# font
+font.family: sans-serif
+font.sans-serif: Arial
+font.weight: bold
+
+# legend
+legend.frameon: False

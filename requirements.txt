@@ -1,0 +1,7 @@
+transformers==4.51.1
+datasets==3.5.0
+accelerate==1.6.0
+wandb==0.19.9
+peft==0.15.2
+scikit-learn==1.6.1
+loguru==0.7.3
