@@ -1,0 +1,21 @@
+# Next Token Perception Score: Analytical Assessment of your LLM Perception Skills
+This repository provides code to reproduce the results in the paper.
+
+Autoregressive pretraining has become the de facto paradigm for learning general-purpose representations in large language models (LLMs). However, linear probe performance across downstream perception tasks shows substantial variability, suggesting that features optimized for next-token prediction do not consistently transfer well to downstream perception tasks. We demonstrate that representations learned via autoregression capture features that may lie outside the subspaces most informative for perception. To quantify the (mis)alignment between autoregressive pretraining and downstream perception, we introduce the Next Token Perception Score (NTPS)-a score derived under a linear setting that measures the overlap between autoregressive and perception feature subspaces. This metric can be easily computed in closed form from pretrained representations and labeled data, and is proven to both upper- and lower-bound the excess loss. Empirically, we show that NTPS correlates strongly with linear probe accuracy across 12 diverse NLP datasets and eight pretrained models ranging from 270M to 8B parameters, confirming its utility as a measure of alignment. Furthermore, we show that NTPS increases following low-rank adaptation (LoRA) fine-tuning, especially in large models, suggesting that LoRA aligning representations to perception tasks enhances subspace overlap and thus improves downstream performance. More importantly, we find that NTPS reliably predicts the additional accuracy gains attained by LoRA finetuning thereby providing a lightweight prescreening tool for LoRA adaptation. Our results offer both theoretical insights and practical tools for analytically assessing LLM perception skills.
+
+# Repo Setup
+```
+git clone https://github.com/Yu-AngCheng/NTPS.git
+cd NTPS
+pip install -r requirements.txt
+```
+
+# Fig reproduction
+We provide all the data and code in the fig_plot folder to reproduce all figures in the main text. 
+For fig1, we provide the features learned through autoregressive ('V') and perceptual ('U') objectives for each word.
+For fig2, we provide the linear probe MSE & ACC and NTPS for each model and dataset.
+For fig3, we provide the lora finetuning accuracy, linear probing accuracy, and NTPS for each model and dataset.
+
+
+# NTPS: Theoretical alignment between autoregression and perception task
+To calcualte the NTPS score for each model and dataset, use [cache.py](cache.py) and [K_sweep.py](K_sweep.py). cache.py will run a forward pass across the whole dataset, caching the necessaary covariance matrices for calculating NTPS. K_sweep.py will solve a null space generalized eigenvalue problem and project the perceptual subspaces ('Ux') onto the autoregressive subspaces ('Vx') to calcualte the NTPS.
