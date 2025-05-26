@@ -23,3 +23,5 @@ To better illustrate the divergence between the perceptual subspaces ('Ux')  and
 
 # Linear probing, LoRA finetuning, training from scratch
 To relate NTPS to the performance of LLMs, we use three measurements: linear probing, LoRA finetuning, and training from scratch, each can be reproduced using [linear_training.py](linear_training.py), [lora_finetuning.py](lora_finetuning.py), and [from_scratch.py](from_scratch.py)
+
+*Note that in fig2, we ran linear and logistric regressions on the pretrained representations using the package sklearn, and the code is provided in [linear_sklearn.py](linear_sklearn.py)
